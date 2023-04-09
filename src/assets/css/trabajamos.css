@@ -1,0 +1,176 @@
+section{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+}
+.description{
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    position: relative;
+    height: 300px;
+    width: 700px;
+    overflow: hidden;
+}
+
+.a{
+    width: 300px;
+}
+
+.card{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transition: all 0.5s;
+}
+
+.iconow{
+    width: 100px !important;
+    height: 100px !important;
+}
+
+.margin{
+    margin-right: 100px;
+} 
+
+.iconos ul{
+    display: flex;
+}
+
+.iconos ul li{
+    margin-right: 50px;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    list-style: none;
+}
+
+img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: bottom;
+}
+
+p{
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1{
+    padding: 10px;
+    border: 5px solid #e91e63;
+    border-radius: 3px;
+    margin-bottom: 20   px;
+    text-align: center;
+    font-size: 1.5vw;
+}
+
+li{
+    font-size: 1.5vw;
+}
+
+.linea{
+    width: 100%;
+    height: 5px;
+    background-color: rgb(64, 59, 59);
+    border-radius: 3px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.progreso{
+    height: 5px;
+    border-radius: 3px;
+    background-color: #0e84aa;
+    position: relative;
+    transition: all 0.5s;
+}
+
+.progreso::before{
+    content: "";
+    transition: all 0.5s;
+    background: url("../logo.png");
+    width: 30px;
+    height: 30px;
+    background-color: #0e84aa;
+    padding: 5px;
+    border-radius: 50%;
+    position: absolute;
+    right: -35px;
+    top: -15px;
+    background-size: cover;
+}
+
+.nosotros{
+    margin-top: 50px;
+}
+
+@media (min-width: 1400px) {
+    .description {
+        height: 500px;
+    }
+    .a {
+        width: 500px;
+    }
+}
+
+@media (max-width: 1440px) {
+    li {
+        font-size: 20px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 965px){
+    .iconos ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;   
+    }
+    .iconos ul li[data-v-33c90498] {
+        margin-right: 20px;
+    }
+    .description {
+        width: 100%;
+        height: 350px;
+    }
+} 
+
+@media (max-width: 565px){
+    .margin {
+        display: none;
+    }
+    .description {
+        height: 222px;
+    }
+}
+
+@media (max-width: 426px){
+    img {
+        width: 60px;
+        height: 60px;
+    }
+    li {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 15px;
+    }
+    .linea {
+        width: 100%;
+    }
+}

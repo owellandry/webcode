@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    height: 105vh;
+    display: flex;
+    align-items: center;
+    margin-left: 3em;
+    justify-content: center;
+}
+
+.separador{
+    display: inline-block;
+    width: 20px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.contentHome {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: end;
+    width: 90%;
+}
+
+video {
+    width: 70%;
+}
+
+h1 {
+    padding: 15px 0 15px 0;
+    font-size: 2vw;
+}
+
+p {
+    text-align: justify;
+    font-size: 1.3vw;
+}
+
+/* Nosotros estamos aquí para ayudarte a destacarte entre la multitud. Creamos páginas web personalizadas y atractivas que reflejan la esencia de tu negocio. Con nuestro equipo, trabajamos contigo para entender tus necesidades y objetivos, y creamos una página web que no sólo cumple con tus expectativas, sino que las supera. No importa si eres un pequeño negocio local o una gran empresa, estamos comprometidos en brindarte una presencia en línea única y profesional, que impulse tu negocio al éxito */
+
+.content {
+    position: relative;
+    z-index: 10;
+}
+
+
+.center {
+    text-align: center;
+    margin: auto auto;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 25px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #27173a;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 7px;
+    bottom: 6px;
+    background-color: #ffc207;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+  
+  input:checked + .slider {
+    background-color: #27173a;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 2px #27173a;
+  }
+  
+  input:checked + .slider:before {
+    webkit-transform: translateX(40px);
+    -ms-transform: translateX(40px);
+    transform: translateX(40px);
+    box-shadow: inset -4px 0px 0px 2px #ffc207;
+    background-color: #27173a;
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .cp {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #6e6d6d;
+  }
+  .cp a {
+    color: #27173a;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+
+@media (min-width: 1500px) {
+    .content {
+        max-width: 1000px;
+    }
+}
+
+.content h3 {
+    font-size: 2em;
+    color: #333;
+    font-weight: 200;
+    transition: 0, 5s;
+}
+
+.content h2 {
+    font-size: 4.5em;
+    color: #333;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+.content span {
+    color: #e91e63;
+}
+
+.content p {
+    font-size: 1.5vw;
+    color: #666;
+    margin: 10px 0;
+    transition: 0.5s;
+}
+
+.dayNight {
+    position: absolute;
+    bottom: 25px;
+    padding: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 2.7vw;
+    height: 2.7vw;
+    border-radius: 50%;
+    color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 20px;
+}
+
+img {
+    width: 40%;
+    animation: infinite imgFlotante 3s alternate-reverse;
+}
+
+@keyframes imgFlotante {
+    from {
+        transform: translateY(25px);
+    }
+
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .content h2 {
+        font-size: 2.5em;
+    }
+
+    .content a {
+        font-size: 15px;
+    }
+
+    section {
+        flex-direction: column;
+        margin-top: 100px !important;
+        margin: 0 30px 0 30px;
+        justify-content: flex-start;
+    }
+
+    .content p {
+        font-size: 20px;
+    }
+
+    img {
+        width: 250px;
+    }
+
+    .dayNight {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    section {
+        height: min-content;
+    }
+}
+
+
+@media (max-width: 350px) {
+    section {
+        margin: 0 15px 0 15px;
+    }
+}
+
