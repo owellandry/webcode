@@ -13,7 +13,7 @@ section{
     align-items: center;
     position: relative;
     height: 300px;
-    width: 700px;
+    width: inherit;
     overflow: hidden;
 }
 
@@ -103,8 +103,8 @@ li{
     content: "";
     transition: all 0.5s;
     background: url("../logo.png");
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background-color: #0e84aa;
     padding: 5px;
     border-radius: 50%;
@@ -112,6 +112,7 @@ li{
     right: -35px;
     top: -15px;
     background-size: cover;
+    border: 5px solid #0e84aa;
 }
 
 .nosotros{
@@ -155,7 +156,7 @@ li{
         display: none;
     }
     .description {
-        height: 222px;
+        height: 280px;
     }
 }
 

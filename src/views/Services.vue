@@ -1,5 +1,7 @@
 <script setup>
   import Buttom from "../components/Button.vue"
+  import { useThemeMode } from '../store/themeMode'
+  const store = useThemeMode();
 </script>
 
 <template>
@@ -7,24 +9,24 @@
     <div class="card tra" style="background-color: #e91e6312;">
       <div class="border"></div>
       <img src="../assets/10586-removebg-preview.png" />
-      <h1>Diseño web a tu medida</h1>
+      <h1 :class="{  'colorWhite': store.stateTheme == 'dark' }">Diseño web a tu medida</h1>
     </div>
     <div class="card card-color-2">
       <div class="border"></div>
       <img src="../assets/ssl-removebg-preview.png" />
-      <h1>Seguros SSL</h1>
+      <h1 :class="{  'colorWhite': store.stateTheme == 'dark' }">Seguros SSL</h1>
     </div>
     <div class="card tra" style="background-color: #e91e6312;">
       <div class="border"></div>
       <img src="../assets/20944154-removebg-preview.png" />
-      <h1>Responsive Design</h1>
+      <h1 :class="{  'colorWhite': store.stateTheme == 'dark' }" >Responsive Design</h1>
     </div>
 
 <RouterLink :to="{ 'name': 'home' }" style="display: contents;">
     <div style="margin-bottom: 0;" class="card card-color-3">
       <div class="border"></div>
       <img src="../assets/6029655-removebg-preview.png" />
-      <h1 style="text-decoration: underline;" >¡Ver todos nuestros servicios!</h1>
+      <h1  :class="{  'colorWhite': store.stateTheme == 'dark' }" style="text-decoration: underline;" >¡Ver todos nuestros servicios!</h1>
     </div>
 </RouterLink>
 </div>

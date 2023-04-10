@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header :class="{  'white': store.stateTheme == 'light', 'black': store.stateTheme == 'dark'}">
     <div class="container__header">
         
     <div class="menu">
@@ -7,25 +7,25 @@
             <ul>
                 <li>
                     <div>
-                        <RouterLink :to="{ name: 'home' }" >Inicio</RouterLink>
+                        <RouterLink :class="{  'colorWhite': store.stateTheme == 'dark' }" :to="{ name: 'home' }" >Inicio</RouterLink>
                         <div class="hoverLink2"></div>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <RouterLink :to="{ name: 'home' }" >Servicios</RouterLink>
+                        <RouterLink :class="{  'colorWhite': store.stateTheme == 'dark' }" :to="{ name: 'home' }" >Servicios</RouterLink>
                         <div class="hoverLink2"></div>
                     </div>
                 </li>
                 <li>
                     <div>
-                    <RouterLink :to="{ name: 'home' }" >Nosotros</RouterLink>
+                    <RouterLink :class="{  'colorWhite': store.stateTheme == 'dark' }" :to="{ name: 'home' }" >Nosotros</RouterLink>
                     <div class="hoverLink2"></div>
                 </div>
                 </li>
                 <li>
                     <div>
-                    <RouterLink :to="{ name: 'home' }" >Contacto</RouterLink>
+                    <RouterLink :class="{  'colorWhite': store.stateTheme == 'dark' }" :to="{ name: 'home' }" >Contacto</RouterLink>
                     <div class="hoverLink2"></div>
                 </div>
                 </li>
@@ -36,7 +36,7 @@
     <div class="logo logo-enlace">
         <RouterLink :to="{ name: 'home' }">
         <div class="logo__texto">
-            <p>WebCode</p>
+            <p :class="{  'colorWhite': store.stateTheme == 'dark' }" :to="{ name: 'home' }">WebCode</p>
         </div>
         <img src="@/assets/logo.png" alt="web code">
         </RouterLink>
@@ -44,7 +44,7 @@
 
     <div class="menu-icon">
         <ul>
-            <li><a href="#"><Facebook /></a></li>
+            <li><a href="#"><font-awesome-icon :icon="['fab', 'facebook']" /></a></li>
             <li><a href="#"><Instagram /></a></li>
             <li><a href="#"><Whatsapp /></a></li>
             <li><a href="#"><Linkedin /></a></li>
@@ -52,9 +52,9 @@
     </div>
 
     <div :class="{'bars-icon': true, 'barContentR': barsOnRotate}" @click="stateHamburguer">
-        <div :class="{'bar1State': barsOn}"></div>
-        <div :class="{'bar2State': barsOn, 'bar2': true,'bar2StateR': barsOnRotate}"></div>
-        <div :class="{'bar3State': barsOn, 'bar3': true,}"></div>
+        <div :class="{'bar1State': barsOn, 'white': store.stateTheme == 'dark', 'black': store.stateTheme == 'light'}"></div>
+        <div :class="{'bar2State': barsOn, 'bar2': true,'bar2StateR': barsOnRotate, 'white': store.stateTheme == 'dark', 'black': store.stateTheme == 'light'}"></div>
+        <div :class="{'bar3State': barsOn, 'bar3': true,'white': store.stateTheme == 'dark', 'black': store.stateTheme == 'light'}"></div>
     </div>
     </div>
     </header>
@@ -83,9 +83,13 @@ import Facebook from './icons/Facebook.vue';
 import Instagram from "./icons/Instagram.vue";
 import Linkedin from "./icons/Linkedin.vue";
 import Whatsapp from "./icons/Whatsapp.vue";
-import Sun from "./icons/Sun.vue";
-import Menu from "./icons/Menu.vue";
+import { useThemeMode } from '../store/themeMode'
 import { ref } from "vue"
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+const store = useThemeMode()
 
 let barsOn = ref(false)
 let barsOnRotate = ref(false)
@@ -98,10 +102,18 @@ const stateHamburguer = () => {
 }
 
 let nightOn = ref(false)
+let refMode = ref(store.stateTheme)
 
 const nightOnFunction = () => {
-    nightOn.value ? nightOn.value = false : nightOn.value = true
+    if(nightOn.value){
+        nightOn.value = false 
+    }else{
+        nightOn.value = true;
+    }
+    nightOn.value ? store.changeMode("dark") : store.changeMode("light")
+    document.body.style.backgroundColor = store.stateTheme == "dark" ? '#131417' : '#f5f5f5';
 }
+
 
 
 </script>

@@ -7,7 +7,7 @@ section {
     height: 105vh;
     display: flex;
     align-items: center;
-    margin-left: 3em;
+    padding-left: 3em;
     justify-content: center;
 }
 
@@ -202,8 +202,8 @@ img {
 
     section {
         flex-direction: column;
-        margin-top: 100px !important;
-        margin: 0 30px 0 30px;
+        margin-top: 80px !important;
+        padding: 0 30px 0 30px;
         justify-content: flex-start;
     }
 
